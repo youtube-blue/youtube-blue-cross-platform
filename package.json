@@ -1,0 +1,23 @@
+{
+  "name": "youtube-blue-crossplatform",
+  "version": "1.0.0",
+  "description": "YouTube Blue is a tweaked open-source YouTube client with ad-blocking, a pretty theme, picture in picture mode, video downloading and so many fancy fuctions :)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/youtube-blue/cross-platform",
+  "keywords": [
+    "youtube",
+    "blue"
+  ],
+  "author": "piciakk",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^13.1.6"
+  },
+  "dependencies": {
+    "@ytdl/ytdl": "^1.4.16",
+    "jquery": "^3.6.0"
+  }
+}

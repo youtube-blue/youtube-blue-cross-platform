@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- html start-->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+
+    <title>YouTube Blue</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/1c9144b004.js" crossorigin="anonymous"></script>
+    </head>
+  </head>
+  <body>
+    <webview id="mainWebView" src="https://www.youtube.com/"></webview>
+  </body>
+</html>
+<!-- javascripts start-->
+<script>
+  const { ipcRenderer } = require('electron')
+  window.$ = window.jQuery = require('jquery');
+  const webview = document.querySelector('webview')
+  function openDevToolsInWebView() {
+    webview.openDevTools()
+  }
+  function enterPiPMode() {
+    webview.executeJavaScript("document.getElementsByClassName('video-stream html5-main-video')[0].requestPictureInPicture()")
+  }
+  window.onload = function() {
+    var screenWidth = window.innerWidth;
+    var screenHeight = window.innerHeight;
+    var webview = document.getElementById("mainWebView");
+    webview.setAttribute("style", "display:inline-flex; width:"+screenWidth+"px; height:"+screenHeight+"px");
+  };
+  window.addEventListener('resize', function(event){
+    var screenWidth = window.innerWidth;
+    var screenHeight = window.innerHeight;
+    webview.setAttribute("style", "display:inline-flex; width:"+screenWidth+"px; height:"+screenHeight+"px");
+  });
+  webview.addEventListener('dom-ready', () => {
+    $.ajax({
+        url: 'https://raw.githubusercontent.com/youtube-blue/youtube-blue-desktop/main/app/blue.css',
+        success: function(data){
+          webview.insertCSS(data);
+        }
+    })
+    $.ajax({
+        url: 'https://raw.githubusercontent.com/youtube-blue/youtube-blue-desktop/main/app/blue.js',
+        success: function(data){
+          webview.executeJavaScript(data);
+        }
+    })
+  })
+  webview.addEventListener('did-navigate-in-page', () => {
+    ipcRenderer.send('asynchronous-message', webview.getURL())
+  });
+</script>
