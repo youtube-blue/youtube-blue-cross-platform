@@ -11,9 +11,7 @@ function createWindow() {
               {
                   label: "Download video",
                   click: async () => {
-                      const ytdl = require('@ytdl/ytdl');
-                      const video = await ytdl.init(webViewURL);
-                      await video.download('1080p', __dirname+'/downloads/video.mp4');
+                    exec("cd " + __dirname + "/downloader && chmod +x youtube-dl && youtube-dl " + webViewURL)
                   }
               },
               {

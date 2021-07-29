@@ -17,7 +17,6 @@
     "electron": "^13.1.6"
   },
   "dependencies": {
-    "@ytdl/ytdl": "^1.4.16",
     "jquery": "^3.6.0"
   }
 }
