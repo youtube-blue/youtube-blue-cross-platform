@@ -11,7 +11,18 @@ function createWindow() {
               {
                   label: "Download video",
                   click: async () => {
-                    exec("cd " + __dirname + "/downloader && chmod +x youtube-dl && youtube-dl " + webViewURL)
+                    var datetime = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '').replace(':', '-').replace(':', '-').replace(' ', '-');
+                    exec("cd " + __dirname + "/downloader/ && chmod u+x ./youtube-dl && ./youtube-dl -f 136+140 --restrict-filenames -o ../downloads/" + datetime + " " + webViewURL + " && cd ..", (error, stdout, stderr) => {
+                        if (error) {
+                            console.log(`error: ${error.message}`);
+                            return;
+                        }
+                        if (stderr) {
+                            console.log(`stderr: ${stderr}`);
+                            return;
+                        }
+                        console.log(`stdout: ${stdout}`);
+                    });
                   }
               },
               {
