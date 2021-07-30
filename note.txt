@@ -1,0 +1,1 @@
+cd downloader/ && chmod u+x ./youtube-dl && ./youtube-dl https://www.youtube.com/watch?v=id6l1nMqpvc && cd ..
