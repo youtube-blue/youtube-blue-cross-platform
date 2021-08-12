@@ -25,13 +25,11 @@ YouTube Blue's adblocker works like magic. Thanks for the [idea](https://dev.to/
 
 # Picture in Picture (PiP) mode
 
-Picture in Picture (PiP) mode is just awesome (but it's buggy sometimes :D). It combines the [`HTMLVideoElement.requestPictureInPicture()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestPictureInPicture) function with [ipcMain](https://www.npmjs.com/package/find-process) and [] usertasks. You can enter Picture in Picture mode by right-clicking the taskbar icon of YouTube Blue, then clicking "Request Picture in Picture (PiP) mode".
-
-
+Picture in Picture (PiP) mode is just awesome (but it's buggy sometimes :D). It combines the [`HTMLVideoElement.requestPictureInPicture()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestPictureInPicture) function with [ipcMain](https://www.electronjs.org/docs/api/ipc-main) and [ipcRenderer](https://www.electronjs.org/docs/api/ipc-renderer). You can enter Picture in Picture mode by opening the menu of YouTube Blue, then clicking "Request Picture in Picture (PiP) mode".
 
 # Video Downloading
 
-Video downloading in YouTube Blue is really fast, and high quality. It uses ~~[ytdl-core](https://github.com/ytdl-org/youtube-dl) integrated into NodeJS~~ [youtube-dl](https://github.com/ytdl-org/youtube-dl) (for high-quality downloading), some command-line tweaks, and Electron usertasks. You can download the current video by right-clicking the taskbar icon of YouTube Blue and selecting the "Download current video" option.
+Video downloading in YouTube Blue is really fast, and high quality. It uses ~~[ytdl-core](https://github.com/ytdl-org/youtube-dl) integrated into NodeJS~~ [youtube-dl](https://github.com/ytdl-org/youtube-dl) (for high-quality downloading), some command-line tweaks, and Electron menus. You can download the current video by opening the menu of YouTube Blue and selecting the "Download current video" option.
 
 # Installation
 
