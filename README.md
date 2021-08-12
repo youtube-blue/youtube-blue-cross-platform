@@ -25,7 +25,7 @@ YouTube Blue's adblocker works like magic. Thanks for the [idea](https://dev.to/
 
 # Picture in Picture (PiP) mode
 
-Picture in Picture (PiP) mode is just awesome (but it's buggy sometimes :D). It combines the [`HTMLVideoElement.requestPictureInPicture()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestPictureInPicture) function with [process-finding](https://www.npmjs.com/package/find-process) and Electron usertasks. You can enter Picture in Picture mode by right-clicking the taskbar icon of YouTube Blue, then clicking "Request Picture in Picture (PiP) mode".
+Picture in Picture (PiP) mode is just awesome (but it's buggy sometimes :D). It combines the [`HTMLVideoElement.requestPictureInPicture()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestPictureInPicture) function with [ipcMain](https://www.npmjs.com/package/find-process) and [] usertasks. You can enter Picture in Picture mode by right-clicking the taskbar icon of YouTube Blue, then clicking "Request Picture in Picture (PiP) mode".
 
 
 
